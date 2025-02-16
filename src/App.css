@@ -97,12 +97,13 @@
 /* Add styles for content */
 .page-content {
   position: relative;
-  z-index: 2;  /* Above grid and gradient */
-  padding-top: 6rem;  /* Space for logo and dock */
+  z-index: 2;
+  padding-top: 6rem;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  min-height: 200vh;  /* Make content area scrollable */
+  margin: 0;
+  padding-left: 8.2rem;
+  min-height: 200vh;
 }
 
 .section {
@@ -162,21 +163,22 @@ p {
 }
 
 .hero-text {
-  padding: 4rem 4rem;
-  font-size: 6rem;  /* Increased font size */
-  line-height: 1;   /* Adjusted line height */
+  padding: 4rem 0;
+  font-size: 6rem;
+  line-height: 1;
   font-weight: 500;
   color: #333;
   max-width: 900px;
   font-family: 'Apple Garamond', serif;
   display: flex;
   flex-direction: column;
-  gap: 0;          /* Removed gap between lines */
+  gap: 1rem;
 }
 
 .hero-text .line {
   display: block;
-  margin-bottom: -0.2em;  /* Negative margin to bring lines closer */
+  margin-bottom: 0;  /* Removed negative margin to prevent overlap */
+  overflow: hidden;
 }
 
 .hero-text .highlight {

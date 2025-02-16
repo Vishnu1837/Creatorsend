@@ -1,6 +1,7 @@
 import './App.css';
 import Dock from './components/Dock/Dock';
 import Logo from './images/Logo.svg';
+import SplitText from './components/SplitText/SplitText';
 
 function App() {
   // Get current path to determine active page
@@ -33,6 +34,10 @@ function App() {
     },
   ];
 
+  const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+  };
+
   return (
     <div className="App animated-grid">
       <div className="logo-container">
@@ -47,9 +52,39 @@ function App() {
       />
       <div className="page-content">
         <h1 className="hero-text">
-          <span className="line">We help you</span>
-          <span className="line">build <span className="highlight">timeless</span></span>
-          <span className="line">brands.</span>
+          <span className="line">
+            <SplitText
+              text="We help you"
+              delay={100}
+              animationFrom={{ opacity: 0, y: 50 }}
+              animationTo={{ opacity: 1, y: 0 }}
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+          </span>
+          <span className="line">
+            <SplitText
+              text="build "
+              delay={100}
+              animationFrom={{ opacity: 0, y: 50 }}
+              animationTo={{ opacity: 1, y: 0 }}
+            />
+            <span className="highlight">
+              <SplitText
+                text="timeless"
+                delay={100}
+                animationFrom={{ opacity: 0, y: 50 }}
+                animationTo={{ opacity: 1, y: 0 }}
+              />
+            </span>
+          </span>
+          <span className="line">
+            <SplitText
+              text="brands."
+              delay={100}
+              animationFrom={{ opacity: 0, y: 50 }}
+              animationTo={{ opacity: 1, y: 0 }}
+            />
+          </span>
         </h1>
       </div>
     </div>
