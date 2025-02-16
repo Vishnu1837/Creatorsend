@@ -2,7 +2,7 @@ import './App.css';
 import Dock from './components/Dock/Dock';
 import Logo from './images/Logo.svg';
 import SplitText from './components/SplitText/SplitText';
-import orangeLine from './images/orangeLine.svg';
+import UnderlineSvg from './components/UnderlineSvg';
 
 function App() {
   // Get current path to determine active page
@@ -76,7 +76,7 @@ function App() {
                 animationFrom={{ opacity: 0, y: 50 }}
                 animationTo={{ opacity: 1, y: 0 }}
               />
-              <img src={orangeLine} alt="" className="orange-line" />
+              <UnderlineSvg />
             </span>
           </span>
           <span className="line">
