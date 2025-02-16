@@ -1,5 +1,6 @@
 import './App.css';
 import Dock from './components/Dock/Dock';
+import Logo from './images/Logo.svg';
 
 function App() {
   // Get current path to determine active page
@@ -34,6 +35,9 @@ function App() {
 
   return (
     <div className="App animated-grid">
+      <div className="logo-container">
+        <img src={Logo} alt="Logo" />
+      </div>
       <Dock 
         items={items}
         panelHeight={40}
