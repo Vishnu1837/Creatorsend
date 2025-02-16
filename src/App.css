@@ -177,24 +177,26 @@ p {
 
 .hero-text .line {
   display: block;
-  margin-bottom: 0;  /* Removed negative margin to prevent overlap */
-  overflow: hidden;
+  margin-bottom: 0;
+  overflow: visible;
+  position: relative;
 }
 
 .hero-text .highlight {
   position: relative;
   display: inline-block;
   font-family: 'Apple Garamond Light Italic', serif;
+  padding: 0 0.1em;
+  overflow: visible;
 }
 
-/* Remove or comment out this block to remove the orange line */
-/* .hero-text .highlight::after {
-  content: '';
+.orange-line {
   position: absolute;
-  bottom: 0.2em;
-  left: 0;
-  width: 100%;
-  height: 0.2em;
-  background-color: #FF5733;
+  bottom: -0.6em;
+  left: -0.2em;
+  width: calc(100% + 0.4em);
+  height: 1.2em;
   z-index: -1;
-} */
+  pointer-events: none;
+  transform: scale(0.8);
+}
