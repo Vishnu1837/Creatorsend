@@ -33,7 +33,7 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className="App animated-grid">
       <Dock 
         items={items}
         panelHeight={40}
