@@ -45,6 +45,13 @@ function App() {
         magnification={50}
         className="main-dock"
       />
+      <div className="page-content">
+        <h1 className="hero-text">
+          <span className="line">We help you</span>
+          <span className="line">build <span className="highlight">timeless</span></span>
+          <span className="line">brands.</span>
+        </h1>
+      </div>
     </div>
   );
 }

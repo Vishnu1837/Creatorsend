@@ -1,9 +1,31 @@
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./Fonts/AppleGaramond-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apple Garamond Light Italic';
+  src: url('./Fonts/AppleGaramond-LightItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apple Garamond Regular';
+  src: url('./Fonts/AppleGaramond.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   position: relative;
   text-align: left;
   background-color: transparent;
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: 200vh;  /* Make it taller than viewport */
+  overflow-x: hidden;  /* Only allow vertical scrolling */
+  overflow-y: auto;
 }
 
 .App::before {
@@ -17,7 +39,7 @@
   background-image:
     linear-gradient(rgba(55, 55, 55, 0.199) 1px, transparent 1px),
     linear-gradient(90deg, rgba(55, 55, 55, 0.16) 1px 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 3.1rem 3.1rem;
   pointer-events: none;
   transform-origin: center center;
 }
@@ -72,10 +94,15 @@
   }
 }
 
-.content {
-  padding-top: 84px;
-  max-width: 800px;
+/* Add styles for content */
+.page-content {
+  position: relative;
+  z-index: 2;  /* Above grid and gradient */
+  padding-top: 6rem;  /* Space for logo and dock */
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  min-height: 200vh;  /* Make content area scrollable */
 }
 
 .section {
@@ -121,11 +148,11 @@ p {
 /* Add these styles for the logo */
 .logo-container {
   position: fixed;
-  top: 20px;
+  top: 0rem;
   left: 20px;
   z-index: 2;  /* Above the grid and gradient */
-  width: 4rem;  /* Adjust size as needed */
-  height: 4rem;  /* Adjust size as needed */
+  width: 5rem;  /* Adjust size as needed */
+  height: 5rem;  /* Adjust size as needed */
 }
 
 .logo-container img {
@@ -133,3 +160,39 @@ p {
   height: 100%;
   object-fit: contain;
 }
+
+.hero-text {
+  padding: 4rem 4rem;
+  font-size: 6rem;  /* Increased font size */
+  line-height: 1;   /* Adjusted line height */
+  font-weight: 500;
+  color: #333;
+  max-width: 900px;
+  font-family: 'Apple Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0;          /* Removed gap between lines */
+}
+
+.hero-text .line {
+  display: block;
+  margin-bottom: -0.2em;  /* Negative margin to bring lines closer */
+}
+
+.hero-text .highlight {
+  position: relative;
+  display: inline-block;
+  font-family: 'Apple Garamond Light Italic', serif;
+}
+
+/* Remove or comment out this block to remove the orange line */
+/* .hero-text .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0.2em;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
+  background-color: #FF5733;
+  z-index: -1;
+} */
