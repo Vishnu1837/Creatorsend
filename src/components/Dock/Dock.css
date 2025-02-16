@@ -29,6 +29,7 @@
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease;
+  transform-origin: center;
 }
 
 .dock-icon {
@@ -57,8 +58,31 @@
   opacity: 1;
 }
 
-
 /* Remove the panel underline */
 .dock-panel::after {
   display: none;
+}
+
+/* Mobile optimization that maintains desktop appearance */
+@media screen and (max-width: 768px) {
+  .dock-outer {
+    transform: scale(0.5);
+    transform-origin: top center;
+  }
+  
+  .dock-panel {
+    gap: 5rem; /* Keep the same gap as desktop */
+  }
+  
+  .dock-icon {
+    font-size: 18px; /* Keep the same size as desktop */
+  }
+}
+
+/* Even smaller for very small screens */
+@media screen and (max-width: 480px) {
+  .dock-outer {
+    transform: scale(0.4);
+    transform-origin: top center;
+  }
 } 

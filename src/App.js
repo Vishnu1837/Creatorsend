@@ -3,6 +3,7 @@ import Dock from './components/Dock/Dock';
 import Logo from './images/Logo.svg';
 import SplitText from './components/SplitText/SplitText';
 import UnderlineSvg from './components/UnderlineSvg';
+import { FiArrowRight } from 'react-icons/fi';
 
 function App() {
   // Get current path to determine active page
@@ -87,6 +88,13 @@ function App() {
               animationTo={{ opacity: 1, y: 0 }}
             />
           </span>
+          <div className="button-container">
+            <button className="primary-button">Get Started</button>
+            <button className="secondary-button">
+              Learn More
+              <FiArrowRight />
+            </button>
+          </div>
         </h1>
       </div>
     </div>
